@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+body {
+    background: url(https://t3.ftcdn.net/jpg/00/99/89/02/360_F_99890228_xRXJFnENLpAHdl82Y5LrRg11RwWMb5KO.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-box{
+    border: 3px solid white;
+    padding: 50px;
+    border-radius: 30px;
+    background-color: azure;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-buttons{
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: azure;
+    margin-top: 30px;
+    gap: 20px;
 }

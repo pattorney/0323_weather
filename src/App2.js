@@ -1,9 +1,17 @@
-import {useEffect, useState} from "react"
+import {useEffect, useState, CSSProperties} from "react"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WeatherBox from "./component/WeatherBox";
 import WeatherButton from "./component/WeatherButton";
 import ClipLoader from "react-spinners/ClipLoader";
+// 1. 앱 실행 시 현재위치 날씨
+// 2. 날씨정보에는 도시, 섭씨, 화씨, 날씨상태
+// 3. 5개의 버튼 (현위치, 4개 도시)
+// 4. 도시 버튼 클릭 시 도시별 출력
+// 5. 현재위치 누를 경우 다시 현재위치 날씨
+// 6. 데이터 수신 중 Loading Spinner 작동
+
+// 현재위치 누르면 현재위치 날씨 출력
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -43,8 +51,9 @@ function App() {
     } else {
       getWeatherByCity()
     }
-    }, [city]);
- 
+    },
+    [city]);
+    
   return (
     <div className="App">
       {loading ? 
@@ -57,7 +66,7 @@ function App() {
         </div> :
         <div className="container">
           <WeatherBox weather={weather} />
-          <WeatherButton cities={cities} setCity={setCity} getCurrentLocation={getCurrentLocation}/>
+          <WeatherButton cities={cities} setCity={setCity}/>
         </div>
       }
     </div>
